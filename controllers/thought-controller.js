@@ -62,7 +62,7 @@ const thoughtsController = {
     // Delete the Thought
     deleteThoughts({ params }, res) {
         Thoughts.findOneAndDelete({ _id: params.id })
-        .then(dbThoughtsData => (dbThoughtsData))
+        .then(dbThoughtsData => res.json(dbThoughtsData))
         .catch(err => res.json(err));
     },
 
